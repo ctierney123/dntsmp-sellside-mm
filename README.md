@@ -28,13 +28,15 @@ Prices, cash, and the confirm dialog come from template matching on Minecraft's 
 
 ## Background
 
-The auction house has no API. `/ah <item>` is the ask book, cheapest first, and you can see nine listings. Several slots often print the same price, and that repeat count is the only size on the level. `/order <item>` is the bid book. The live loop trades asks only. If you want the quoted spread, `--spread-check` reads the best ask minus the best bid. The default name there is enchanted golden apple.
+The auction house has no API. `/ah <item>` is the ask book, cheapest first, and the bot hovers the cursor over the first nine listings to read them. Several slots often print the same price, and that repeat count is the only size on the level. `/order <item>` is the bid book. The live loop trades asks only. If you want the quoted spread, `--spread-check` reads the best ask minus the best bid. 
 
 The trade is a slow take-and-join. A lot will sit hundreds of thousands under the cluster behind it, long enough to lift it and repost with the market. You mark that cluster with a median, so the cheap lots you want to buy do not pull fair value down with them. When the row is a thin staircase and no price repeats more than twice, the median of the whole ladder sits too far up the curve. You then mark only the cheapest four asks, which is the part of the book you can sell into.
 
 A pass walks netherite chestplate, leggings, helm, boots, sword, and ingot. Bands, ceilings, and waits live in `ah_price/config.py`.
 
 ## Install
+
+Note: This was tested in July of 2026, so if the GUI changes on DonutSMP then this bot will need to be updated.
 
 You need [Python](https://www.python.org/) 3.11 or newer. From the repo root:
 
@@ -46,11 +48,13 @@ pip install -r requirements.txt
 
 ### Dependencies
 
-Run this on Windows, with Minecraft in the foreground. Set GUI scale to a whole number (2, 3, or 4). A fractional scale blurs the font, and the templates stop matching. Capture boxes are absolute pixels, checked around 1920×1080. If you change resolution or GUI scale, calibrate again.
+Run this on Windows, with Minecraft in the foreground. Set GUI scale to a whole number (2, 3, or 4). A fractional scale blurs the font, and the templates stop matching. Capture boxes are absolute pixels, checked around 1920×1080. If you change resolution or GUI scale, calibrate again. 
 
 `requirements.txt` pulls in the screen capture and `pyautogui`. You do not install Tesseract. The optional OCR fallback is off.
 
 ## Usage
+
+Note: This was tested in July of 2026, so if the GUI changes on DonutSMP then this bot will need to be updated.
 
 Click into Minecraft during the countdown, and leave that window in front.
 
@@ -69,6 +73,8 @@ Every ladder, takes and skips, is appended to `logs/armor_arb_order_books/` as J
 Calibrate before the first session. The loop will click the wrong pixels otherwise.
 
 ### Calibrate
+
+Note: This was tested in July of 2026, so if the GUI changes on DonutSMP then this bot will need to be updated.
 
 With the scoreboard on screen:
 
