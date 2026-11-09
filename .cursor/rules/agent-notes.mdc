@@ -1,0 +1,14 @@
+---
+description: Point agents at /agent-notes for prior-chat issue context
+alwaysApply: true
+---
+
+# Agent notes (prior chat context)
+
+Useful agent notes for specific issues in this codebase live in **`/agent-notes`**.
+
+These are write-ups from previous chats that capture debugging context, timing research, gotchas, and other non-obvious findings. When investigating a bug, odd behavior, or an area that looks like it was already worked through:
+
+1. Check `agent-notes/` for a relevant note before rediscovering the same ground.
+2. Prefer those notes as starting context; verify against current code if things may have changed.
+3. If you resolve a sticky issue that future agents will hit again, consider adding a short note there.
